@@ -1,0 +1,21 @@
+/* chapterlist.wxss */
+.listPar {
+   display: flex;
+   justify-content:space-between;
+   align-items:center;
+   border-bottom: 1px #f0f0f0 solid;
+   width:95%;
+   margin:0 auto;
+}
+.itemList{
+  padding-left:40rpx;
+  line-height: 130rpx;  
+}
+.arrow{
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid #5b5b5b;
+  border-right: 2px solid #5b5b5b;
+  transform: rotate(45deg);
+  margin-right: 40rpx;
+}

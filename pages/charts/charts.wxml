@@ -1,0 +1,62 @@
+<view class="favorite">
+  <view class="tab">
+    <view class="tabItem {{currentTab==0?'active':''}}" data-current="0" bindtap="clickTab"><text class="">每日答题正确率</text></view>
+    <view class="tabItem {{currentTab==1?'active':''}}" data-current="1" bindtap="clickTab"><text class="">总答题正确率</text></view>
+  </view>
+  <swiper current='{{currentTab}}' class="swiper-box" duration='300' bindchange='bindChange' style="height: {{clientHeight?clientHeight+'px':'auto'}}">
+    <!-- 我的收藏 -->
+    <swiper-item class="swiper-content">
+      <scroll-view scroll-y="{{true}}" style="height: {{clientHeight?clientHeight+'px':'auto'}}">
+            <block >
+              <view class="favoriteCon chartsCon">
+                <view class="item">
+                  <view class="userinfo">
+                      <view class="imgCon"><image src="../../images/gold1.png"></image></view>
+                      <image class="userinfo-avatar" src="../../images/go.png" background-size="cover"></image>  
+                      <text class="userinfo-nickname">吕花花{{userInfo.nickName}}</text> 
+                      <text>99%</text> 
+                  </view>
+                </view>
+              </view>
+              <view class="favoriteCon chartsCon">
+                <view class="item activeCharts">
+                  <view class="userinfo">
+                      <view class="imgCon">10</view>
+                      <image class="userinfo-avatar" src="../../images/go.png" background-size="cover"></image>  
+                      <text class="userinfo-nickname">吕花花{{userInfo.nickName}}</text> 
+                      <text>99%</text> 
+                  </view>
+                </view>
+              </view>
+            </block>
+      </scroll-view> 
+    </swiper-item>
+    <!-- 收藏排行 -->
+    <swiper-item class="swiper-content">
+      <scroll-view scroll-y="{{true}}" style="height: {{clientHeight?clientHeight+'px':'auto'}}">
+            <block >
+              <view class="favoriteCon chartsCon">
+                <view class="item">
+                  <view class="userinfo">
+                      <view class="imgCon"><image src="../../images/gold1.png"></image></view>
+                      <image class="userinfo-avatar" src="../../images/go.png" background-size="cover"></image>  
+                      <text class="userinfo-nickname">吕花花{{userInfo.nickName}}</text> 
+                      <text>99%</text> 
+                  </view>
+                </view>
+              </view>
+              <view class="favoriteCon chartsCon">
+                <view class="item activeCharts">
+                  <view class="userinfo">
+                      <view class="imgCon">10</view>
+                      <image class="userinfo-avatar" src="../../images/go.png" background-size="cover"></image>  
+                      <text class="userinfo-nickname">吕花花{{userInfo.nickName}}</text> 
+                      <text>99%</text> 
+                  </view>
+                </view>
+              </view>
+            </block>
+      </scroll-view> 
+    </swiper-item>
+  </swiper>
+</view>

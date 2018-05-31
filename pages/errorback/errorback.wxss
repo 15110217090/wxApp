@@ -1,0 +1,65 @@
+.header{
+  height:113rpx;
+  padding:0 50rpx;
+  font-size:30rpx;
+  display: flex;
+  justify-content:space-between;
+  align-items:center;
+  text-align: center;
+  border-bottom:10rpx #fffbfb solid; 
+}
+.title{
+  color: #343434;
+}
+.group{
+  padding:50rpx;
+  display: flex;
+  flex-wrap:wrap;
+}
+.label-1{
+  margin:0 40rpx 15rpx 0;   
+}
+.label-1__text{
+  font-size:32rpx;
+}
+.label-1__icon {
+  position: relative;
+  margin-right: 10px;
+  display: inline-block;
+  vertical-align: middle;
+  width:32rpx;
+  height:32rpx;
+  border:1px #e5e5e5 solid;
+  border-radius: 5rpx;
+}
+.label-1__icon-checked {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 32rpx;
+  height: 32rpx;
+  border:none;
+  background: #41a6fe;
+}
+.label-1__icon-checked image{
+  width:18rpx;
+  height:12rpx;
+  text-align: center;
+  margin:10rpx auto;
+  display: block;
+}
+.section{
+  width:90%;
+  padding:10rpx;
+  min-height:240rpx;
+  margin:0 auto;
+  border-radius: 10rpx;
+  border:1rpx #bfbfbf dashed;
+  font-size:30rpx;
+}
+.btnSend{
+  width:95%;
+  margin:150rpx auto;
+  color:#fff;
+  background: #41a6fe;
+}

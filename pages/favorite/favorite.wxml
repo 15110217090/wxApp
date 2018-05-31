@@ -1,0 +1,10 @@
+<view class="favorite">
+  <block wx:for="{{collects}}"  wx:for-item="item" wx:key="collect">
+    <view class="favoriteCon">
+      <view class="item">
+          <view class="title">{{index+1}}：{{item.question}}</view>
+          <view class="answer">答案：{{item.answer}}{{item.right}}</view>
+      </view>
+    </view>
+  </block>
+</view>

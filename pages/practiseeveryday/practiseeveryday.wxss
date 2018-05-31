@@ -1,0 +1,38 @@
+/* chapterlist.wxss */
+page{
+  background: #f0f0f0;
+}
+.conPar{
+  background: #fff;
+  padding:0 20rpx;
+  margin-top:20rpx;
+}
+.time{
+  border-bottom: 1px #f0f0f0 solid;
+  color:#4b4b4b;
+  font-size: 30rpx;
+  padding:30rpx 0;
+}
+.listPar {
+   display: flex;
+   justify-content:space-between;
+   align-items:center; 
+   padding:30rpx 0;
+}
+.itemTitle{
+  font-size: 28rpx;
+  color: #4b4b4b;
+  margin-bottom: 20rpx;
+}
+.itemCon{
+  color:#959595;
+  font-size: 24rpx;
+}
+.iconpen{
+  width: 30px;
+  height: 30px; 
+  margin-right:20rpx; 
+}
+.ml-50{
+  margin-left:50rpx;
+}

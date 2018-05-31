@@ -1,0 +1,200 @@
+.header{
+  height:113rpx;
+  padding:0 50rpx;
+  font-size:30rpx;
+  display: flex;
+  justify-content:space-between;
+  align-items:center;
+  text-align: center;
+  border-bottom:10rpx #fffbfb solid; 
+}
+.title{
+  color: #fd615a;
+}
+.content{
+    font-size:30rpx;
+	width:100%;
+	height:100%;
+}
+.content scroll-view{
+	width:100%;
+	height:100%;
+}
+.questionWrapper{
+  padding:30rpx 50rpx;
+  line-height: 50rpx;
+}
+swiper{
+  display: block;
+  min-height:980rpx; 
+}
+.questionCon{
+  display: flex;
+  align-items:center;
+  padding:0 50rpx;
+  margin-bottom: 15rpx;
+}
+.bottomBar{
+  position: fixed;
+  width:100%;
+  z-index: 10;
+  bottom:0;
+  padding:10rpx 0 10rpx;
+  display: flex;
+  justify-content:space-between;
+  align-items:center;
+  text-align: center;
+  border-top:1px #f0f0f0 solid;
+}
+.bottomBar .item{
+  width:33%;
+}
+.sc{
+  width: 43rpx;
+  height:43rpx;
+}
+.bottomBar .content{
+   display: flex;
+   flex: 1;
+   align-items:center;
+   flex-direction:column;
+   text-align: center;
+   font-size: 24rpx;
+}
+.bottomBar .content text{
+  margin-top:10rpx;
+}
+.questionCon {
+  position: relative;
+}
+.questionCon radio{
+  display: none;
+}
+.questionCon .letter{
+  width:50rpx;
+  height:50rpx;
+  text-align: center;
+  line-height: 50rpx;
+  border:1px #c9c9c9 solid;
+  border-radius: 50%;
+  margin-right:10rpx;
+}
+form{
+  display: block;
+}
+
+.rightArrow{
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid #61aaea;
+  border-right: 2px solid #61aaea;
+  transform: rotate(45deg);
+}
+input{
+  line-height:4.4rem;
+  font-size:30rpx;
+}
+.letterActive{
+  background: #32c6af;
+  color:#fff;
+  border:none;
+}
+.letterRight{
+  background: url(https://tk.qikeya.com/static/images/wxmini/right.png);
+  background-size: 100%;
+  width:50rpx;
+  height:50rpx;
+  border:none;
+  color:rgba(97,170,234,0);
+}
+.letterWrong{
+  background: url(https://tk.qikeya.com/static/images/wxmini/error.png);
+  background-size: 100%;
+  width:50rpx;
+  height:50rpx;
+  border:none;
+  color:rgba(253,97,90,0);
+}
+.my-answer{
+  color:#61aaea;
+}
+.correct-answer{
+   color:#fd615a;
+}
+.queB1Wrapper{
+   background: #fef5f5; 
+}
+.queB1Wrapper view{
+  margin:20rpx 0 10rpx 20rpx;
+}
+.b1submitPar{
+  display: flex; 
+  padding-left:30rpx;
+}
+.b1submit .questionCon{
+  padding:0 20rpx;
+}
+.b1tit{
+  padding:30rpx 50rpx;
+}
+.jiexiBaba{
+  display: none;
+}
+.jiexiBaba image{
+  width:32rpx;
+  height:30rpx;
+}
+.jiexiBaba{
+   border-top:10rpx #fffbfb solid;
+   width:80%;
+   margin:50rpx auto;
+}
+.jxi{
+  border-top:1rpx #848484 solid;
+  text-align: center;
+  margin-bottom: 20rpx;
+}
+.jxi text{
+  width:150rpx;
+  background:#fff;
+  display: block;
+  text-align: center;
+  margin:-20rpx auto 0;
+}
+.jiexiWrapper{
+  display: flex;
+  justify-content:space-between;
+  align-items:center;
+  text-align: center;
+}
+.degree{
+   display: flex;
+  align-items:center;
+  text-align: center;
+}
+.jiexiWrapper{
+  display: flex;
+  justify-content:space-between;
+  align-items:center;
+  text-align: center;
+}
+.jiexiPar{
+   display: flex;
+  /* justify-content:space-between; */
+  align-items:center;
+  text-align: center;
+  
+}
+.par{
+border-top: 1px #c9c9c9 solid;
+}
+.degree{
+   margin:10rpx 0 10rpx;
+}
+.count{
+  margin:0rpx 0 10rpx;
+  padding:0px 0 10rpx; 
+}
+.jiexiWrapper{
+  margin:10rpx 0;
+}

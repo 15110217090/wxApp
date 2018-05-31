@@ -1,0 +1,23 @@
+{
+  "pages": [
+    "pages/index",
+    "pages/chapterlist/chapterlist",
+    "pages/alltest/alltest",
+    "pages/answercard/answercard",
+    "pages/chaptercontent/chaptercontent",
+    "pages/favorite/favorite",
+    "pages/wrong/wrong",
+    "pages/errorback/errorback",
+    "pages/questiontypes/questiontypes",
+    "pages/practiseeveryday/practiseeveryday",
+    "pages/charts/charts",
+    "pages/notes/notes",
+    "pages/test/aaa"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "七颗牙题库",
+    "navigationBarTextStyle": "black"
+  }
+}

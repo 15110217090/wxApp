@@ -1,0 +1,152 @@
+.header{
+  height:113rpx;
+  padding:0 50rpx;
+  font-size:30rpx;
+  display: flex;
+  justify-content:space-between;
+  align-items:center;
+  text-align: center;
+   border-bottom:10rpx #fffbfb solid; 
+}
+.title{
+  color: #fd615a;
+}
+.content{
+    font-size:30rpx;
+}
+.questionWrapper{
+  padding:30rpx 50rpx;
+  line-height: 50rpx;
+}
+swiper{
+  display: block;
+  min-height:980rpx; 
+}
+.questionCon{
+  display: flex;
+  align-items:center;
+  padding:0 50rpx;
+  margin-bottom: 15rpx;
+}
+.bottomBar{
+  position: fixed;
+  width:100%;
+  z-index: 10;
+  bottom:0;
+  padding:10rpx 0 10rpx;
+  display: flex;
+  justify-content:space-between;
+  align-items:center;
+  text-align: center;
+  border-top:1px #f0f0f0 solid;
+}
+.bottomBar .item{
+  width:33%;
+}
+.sc{
+  width: 43rpx;
+  height:43rpx;
+}
+.bottomBar .content{
+   display: flex;
+   flex: 1;
+   align-items:center;
+   flex-direction:column;
+   text-align: center;
+   font-size: 24rpx;
+}
+.bottomBar .content text{
+  margin-top:10rpx;
+}
+.questionCon {
+  position: relative;
+}
+.questionCon radio{
+  display: none;
+}
+.questionCon .letter{
+  width:50rpx;
+  height:50rpx;
+  text-align: center;
+  line-height: 50rpx;
+  border:1px #c9c9c9 solid;
+  border-radius: 50%;
+  margin-right:10rpx;
+}
+form{
+  display: block;
+}
+.answerWrapper{
+  border-top:17rpx #fffbfb solid;
+  width:80%;
+  margin:50rpx auto 10rpx;
+  border-bottom:1px #f0f0f0 solid;
+  padding-bottom: 20rpx;
+}
+.answerWrapper:last-child{
+  border-bottom:none;
+}
+.jxi{ 
+  margin:50rpx auto;
+  border-top:1px #848484 solid;
+  position: relative;
+}
+.jxi text{
+  width:140rpx;
+  background: #fff;
+  text-align: center;
+  display: block;
+  margin:-20rpx auto;
+}
+.answerWrapper .daan{
+  margin:40rpx 0 10rpx;
+}
+.answerWrapper .my-answer{
+  color:#6fb0eb;
+  margin-left:10rpx;
+}
+.degree{
+  display: flex;
+  align-items:center;
+  margin-bottom: 10rpx;
+}
+.answerWrapper .correct-answer{
+  margin-left:10rpx;
+  color: #fd615a;
+}
+.answerWrapper .star image{
+  width:32rpx;
+  height:32rpx;
+  margin-right: 10rpx;
+}
+.jiexiWrapper{
+  margin:10rpx auto 0;
+  display: flex;
+  justify-content:space-between;
+  align-items:center;
+  border-top:none;
+}
+.par{
+  margin:0 auto;
+  border-top:none;
+}
+.jiexiPar{
+  margin:10rpx 0;
+  color:#61aaea;
+}
+.rightArrow{
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid #61aaea;
+  border-right: 2px solid #61aaea;
+  transform: rotate(45deg);
+}
+input{
+  line-height:4.4rem;
+  font-size:30rpx;
+}
+.letterActive{
+  background: #32c6af;
+  color:#fff;
+  border:none;
+}

@@ -1,0 +1,15 @@
+<!--chapterlist.wxml-->
+<view class="chapterlist">
+  <block wx:for="{{movie}}" wx:key="">
+    <navigator url="../chaptercontent/chaptercontent?subject_id={{subject_id}}&chapter_id={{item.id}}&sortType={{sortType}}">
+      <view class="listPar">
+        <view class="itemList">{{item.name}}</view>
+        <view class="arrow"></view>
+      </view>
+    </navigator>
+  </block>
+  <!--循环输出列表 end-->
+  <loading hidden="{{loadHidden}}" bindchange="loadChange">
+      数据加载中...
+  </loading>
+</view>

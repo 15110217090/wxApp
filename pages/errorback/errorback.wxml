@@ -1,0 +1,24 @@
+<view class="alltest">
+  <view class="header">
+    <view class="title">请选择错误类型</view>
+  </view>
+</view>
+<form>
+  <checkbox-group class="group" bindchange="checkboxChange">
+    <view class="label-1" wx:for="{{checkboxItems}}">
+      <label>
+        <checkbox hidden value="{{item.name}}" checked="{{item.checked}}"></checkbox>
+        <view class="label-1__icon">
+          <view class="label-1__icon-checked" style="opacity:{{item.checked ? 1: 0}}">
+              <image src="../../images/dui.png"></image>
+          </view>
+        </view>
+        <text class="label-1__text">{{item.value}}</text>
+      </label>
+    </view>
+  </checkbox-group>
+  <view class="section">
+    <textarea bindblur="bindTextAreaBlur" auto-height placeholder="请描述题目错误所在，谢谢您的支持" />
+  </view>
+  <button  class="btnSend" form-type="submit" bindtap="clickSend"> 提  交 </button>
+</form>

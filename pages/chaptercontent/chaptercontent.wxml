@@ -1,0 +1,13 @@
+<!--chapterlist.wxml-->
+<view class="chaptercontent">
+  <block wx:for="{{matter}}">
+    <navigator url="../alltest/alltest?unit_id={{item.id}}&subject_id={{idCache.subject_id}}&chapter_id={{idCache.chapter_id}}&sortType={{idCache.sortType}}" class="listPar">
+      <view class="itemList">{{item.name}}</view>
+      <image src="../../images/pen.png" class="iconpen"></image>
+    </navigator>
+  </block>
+     <!--循环输出列表 end-->
+  <loading hidden="{{loadHidden}}" bindchange="loadChange">
+      数据加载中...
+  </loading>
+</view>

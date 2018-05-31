@@ -1,0 +1,19 @@
+  <swiper indicator-dots="{{swiper.indicatorDots}}" autoplay="{{swiper.autoplay}}" interval="{{swiper.interval}}" duration="{{swiper.duration}}" current="1" bindchange="changeSwiper">
+
+
+		<swiper-item>
+	
+     <label>1222</label>
+	  </swiper-item>
+
+<swiper-item>
+	
+     <label>00000000</label>
+	  </swiper-item>
+  </swiper>
+
+
+<label wx:for='{{list}}'>qqq</label>
+
+
+  <button bindtap='clickTap'>点击</button>

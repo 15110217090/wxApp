@@ -1,0 +1,20 @@
+/* chapterlist.wxss */
+.chaptercontent{
+  width:95%;
+  margin:0 auto;
+}
+.listPar {
+   display: flex;
+   justify-content:space-between;
+   align-items:center;
+   border-bottom: 1px #f0f0f0 solid;
+}
+.itemList{
+  padding-left:40rpx;
+  line-height: 130rpx;
+}
+.iconpen{
+  width: 30px;
+  height: 30px; 
+  margin-right:20rpx; 
+}

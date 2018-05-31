@@ -1,0 +1,23 @@
+<!--chapterlist.wxml-->
+<view class="practiseeveryday">
+  <navigator url="" class="conPar">
+    <view class="time">2018-05-07</view>
+    <view class="listPar">
+      <view>
+          <view class="itemTitle">20180507综合笔试》每日一练</view>
+          <view class="itemCon">题目数量10<text class="ml-50">做题人数3294</text></view>
+      </view>
+      <image src="../../images/pen.png" class="iconpen"></image>
+    </view>
+  </navigator>
+  <navigator url="" class="conPar">
+    <view class="time">2018-05-07</view>
+    <view class="listPar">
+      <view>
+          <view class="itemTitle">20180507综合笔试》每日一练</view>
+          <view class="itemCon">题目数量10<text class="ml-50">做题人数3294</text></view>
+      </view>
+      <image src="../../images/pen.png" class="iconpen"></image>
+    </view>
+  </navigator>
+</view>

@@ -1,0 +1,93 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="section">
+    <!-- 职业选择 -->
+    <view class="zyxz">
+        <picker mode="selector" bindchange="bindPickerChange" value="{{index}}" range="{{doctors}}"  class="selectTxt">
+            <view class="picker">
+               {{doctors[index]}} 
+               <view class="arrowDown"></view>    
+            </view>
+        </picker>     
+      <navigator url="charts/charts">
+          <image src="../images/ph.png" class="ph"></image>
+      </navigator>
+    </view>
+
+    <!-- 倒计时 -->
+    <view class="clockTxt">
+      <view class="daojishiCon"> 
+        <text class="daojishiTxt">- 距离2018年理论考试还有 -</text>
+        <view class="daojishi">
+            <text>{{countDownDay}}</text>
+            <text class="daojishiG">（天）</text>
+        </view>
+      </view>
+    </view>
+    <navigator class="card mb0" url="">
+      <image src='../images/clockBg.png'  class='clockBg'></image>
+    </navigator>
+    <!-- 广告图 -->
+    <navigator class="card bannerBgCon mb0" url="">
+      <image src='../images/bannerBg.png'  class='bannerBg'></image>
+      <image src='../images/go.png'  class='go' animation="{{animationMiddleHeaderItem}}"></image>
+    </navigator>  
+    <!-- 选择提型 -->
+    <view class="selectMold card">
+      <navigator class="item sc" url="favorite/favorite">
+          <image src="../images/icon1.png"></image> 
+          <text>收藏</text>
+      </navigator>
+      <navigator class="item ct" url="wrong/wrong">
+          <image src="../images/icon2.png"></image> 
+          <text>错题</text>
+      </navigator>
+      <navigator class="item bj" url="notes/notes">
+          <image src="../images/icon3.png"></image> 
+          <text>笔记</text>
+      </navigator>
+    </view>
+    <!-- 章节选择 -->
+    <view class="selectMold2 card mb0">
+      <view class="selectMold2Left">
+          <navigator class="selectMold2LeftTop" url="chapterlist/chapterlist?id={{index*1+1}}&sortType=1">
+              <view class="selectMold2LeftTopTxt">
+                  <view class="itemTxt">章节练习</view>
+                  <text>高质量试题 覆盖各考点</text>
+              </view>
+              <image class="selectMold2ImgIcon" src="../images/icon4.png"></image>
+          </navigator>
+          <navigator class="selectMold2LeftTop"  url="questiontypes/questiontypes">
+            <view class="selectMold2LeftTopTxt">
+                  <view class="itemTxt">题型练习</view>
+                  <text>针对性练习 重点突破</text>
+              </view>
+              <image class="selectMold2ImgIcon" src="../images/icon5.png"></image>
+          </navigator>
+      </view>
+      <navigator class="selectMold2Right"  url="alltest/alltest?&sortType=3&tiType=5">
+         <view class="mryl">每日一练</view>
+         <text>坚持就是胜利</text>
+         <view class="selectMold2ImgIcon mrylIcon">打卡</view>
+      </navigator>
+    </view>
+    <view class="selectMold3 card">
+      <navigator class="selectMold2Right" url="alltest/alltest?&sortType=4&tiType=6" >
+         <view class="mryl miks">模拟考试</view>
+         <text>让考试成为一种习惯</text>
+         <image class="selectMold2ImgIcon" src="../images/icon6.png"></image>
+      </navigator>
+      <navigator class="selectMold2Right" url="alltest/alltest?&sortType=5&tiType=7">
+         <view class="mryl lnzt">课堂练习</view>
+         <text>课堂汇总及精解</text>
+         <image class="selectMold2ImgIcon" src="../images/icon7.png"></image>
+      </navigator>
+      <navigator class="selectMold2Right" url="test/aaa">
+         <view class="mryl kqyt">考前押题</view>
+         <text>专家押题 考试无忧</text>
+         <image class="selectMold2ImgIcon" src="../images/icon8.png"></image>
+         <image class="fufei" src="../images/icon9.png"></image>
+      </navigator>
+    </view>
+</view>
+</view>

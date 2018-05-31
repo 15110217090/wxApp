@@ -1,0 +1,9 @@
+<view class="favorite" wx:for="{{dataList}}" wx:for-item="note">
+  <view class="favoriteCon">
+    <view class="item">
+        <view class="title">{{index+1}}：{{note.question}}</view>
+        <view class="answer">答案：{{note.answer}}{{note.right}}</view>
+        <view class="note">笔记：{{note.remark}}</view>
+    </view>
+  </view>
+</view>

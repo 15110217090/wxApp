@@ -1,0 +1,96 @@
+<view class="alltest">
+  <view class="header">
+    <view class="title cardTit">共<text class="numAll">{{cards.length}}</text>题，已答<text class="numAll">{{selects.length}}</text>题，未答<text class="numNot">{{cards.length-selects.length}}</text>题</view>
+  </view>
+  <form>
+    <swiper style="height：100%">
+        <swiper-item class="content" style="overflow-y: auto; ">
+            <scroll-view scroll-y="true" style="height: 100vh;">
+              <view class="questionWrapper">
+
+                <view wx:if="{{isContainA}}" class="cardTit">【A1型题】</view>
+                <view  class="cardCon">                 
+                  <view wx:for="{{cards}}" wx:for-index="index" wx:for-item="item">
+                    <view wx:if="{{item.type == 1}}" >
+                      <view wx:if="{{item.isS}}"class="cardlef active" >{{index+1}}</view>
+                      <view wx:else class="cardlef" bindtap='selectTap' data-select="{{index+1}}">{{index+1}} </view>
+                    </view>  
+                  </view> 
+                </view>
+              
+                <view wx:if="{{isContainB}}" class="cardTit">【A2型题】</view>
+                <view  class="cardCon">
+                  <view wx:for="{{cards}}" wx:for-index="index" wx:for-item="item">
+                    <view wx:if="{{item.type == 2}}" >
+                    <view wx:if="{{selects[index]}}"class="cardlef active">{{index+1}}</view>
+                    <view wx:else class="cardlef" bindtap='selectTap' data-select="{{index+1}}">{{index+1}} </view>
+                  </view>  
+                  </view> 
+                </view>
+              
+                <view wx:if="{{isContainC}}" class="cardTit">【A3/A4型题】</view>
+                <view  class="cardCon">
+                  <view wx:for="{{cards}}" wx:for-index="index" wx:for-item="item">
+                    <view wx:if="{{item.type == 3}}" >
+                    <view wx:if="{{selects[index]}}"class="cardlef active">{{index+1}}</view>
+                    <view wx:else class="cardlef" bindtap='selectTap' data-select="{{index+1}}">{{index+1}} </view>
+                  </view>  
+                  </view> 
+                </view>
+                  
+                <view wx:if="{{isContainD}}" class="cardTit">【B1型题】</view>
+                <view  class="cardCon">
+                  <view wx:for="{{cards}}" wx:for-index="index" wx:for-item="item">
+                    <view wx:if="{{item.type == 4}}" >
+                    <view wx:if="{{selects[index]}}"class="cardlef active">{{index+1}}</view>
+                    <view wx:else class="cardlef" bindtap='selectTap' data-select="{{index+1}}">{{index+1}} </view>
+                  </view>  
+                  </view> 
+                </view>
+              </view>
+            </scroll-view>
+        </swiper-item>       
+    </swiper>
+  </form>
+
+
+  
+  <view class="bottomBar">
+    <view class="item" bindtap="reStart">
+        <view class="content">
+          <image class="sc" src="../../images/begin.png"></image>
+          <text class="numNot">重新开始</text>
+        </view>
+    </view>    
+    <view class="item" bindtap="lookResult">
+        <view class="content">
+          <button class="btnSend" form-type="submit" bindtap="endAnswer">结束答题</button>
+        </view>
+    </view>
+  </view> 
+
+
+
+<!-- 答题报告 -->
+<view class="modal-mask"   wx:if="{{showDialog}}"></view>
+<view class="modal-dialog"  wx:if="{{showDialog}}">
+  <view class="modal-title">答题报告<view class="close" bindtap="closeDialog">X</view></view>
+  <view class="modal-content">
+    <text class="defen">得分</text>
+    <view class="score"><view>{{result.score}}</view>分</view>
+    <view class="depict">
+        <view>总共{{result.Tnum}}题　|</view>
+        <view>正确率{{result.accuracy}}%　|</view>
+        <view>耗时{{result.use_time}}</view>
+    </view>
+  </view>
+  <view class="item">
+      <view class="redTxt">{{result.passed_status}}！请继续努力！</view>
+      <view class="tishi">为方便您了解本次做错的题，我们已经把做错的题放入了错题中，让您可以针对性学习！</view>
+      <!-- <view class="btnJxi">
+        <view>错题解析</view>
+        <view>全部解析</view>
+      </view> -->
+  </view>
+</view>
+</view>

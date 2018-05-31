@@ -1,0 +1,366 @@
+<import src="../../template/commons/commons.wxml" />
+
+
+<template is="msgHeader" data="{{...item}}" />
+
+
+
+
+<!-- A1/A2 -->
+<view class="alltest" bindtap="alltest">
+
+  <!-- modal  单独拿出来，放在swiper-item 中 会受到item的大小受限制 -->
+  <modal hidden="{{hiddenmodalput}}" confirm-text="确定" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm">
+    <input type='text' placeholder="好记性不如烂笔头" auto-focus bindfocus='iRemark' class="modal" />
+  </modal>
+
+
+  <swiper indicator-dots="{{swiper.indicatorDots}}" autoplay="{{swiper.autoplay}}" interval="{{swiper.interval}}" duration="{{swiper.duration}}" current="{{swiper.current}}" bindchange="changeSwiper">
+    <swiper-item wx:for="{{cardList}}" wx:for-item="question" wx:for-index="index">
+      <view class="content">
+
+
+
+        <scroll-view scroll-y>
+
+
+
+          <!-- A1/A2 -->
+          <block wx:if="{{question.type == 1 || question.type == 2}}">
+
+
+            <form bindsubmit="submitAnswer">
+              <view class="questionWrapper">
+                {{index+1+'.'}}{{question.question}}
+              </view>
+
+              <radio-group class="questionChoice" bindchange="radioChange">
+
+
+
+
+                <label style="display: flex" wx:for="{{question.choices}}">
+
+
+
+                  <label class="questionCon">
+
+
+
+
+
+                    <block wx:if="{{question.isClick}}">
+
+
+                      <!-- 已经选择答案后 -->
+                      <!-- 判断正确答案跟当前是否一致 -->
+                      <block wx:if="{{question.currentAnswers == indexArray.indexOf(question.answer) }}">
+                        <!-- 显示正确答案 -->
+                        <label class="letterRight">
+                          <text class="iconRight"></text>{{indexArray[index]}} </label>
+                        <radio value="{{index+10}}" disabled="ture" />{{item}}
+                      </block>
+                      <!-- 答案选择错误 -->
+                      <block wx:else>
+                        <block wx:if="{{rightAnswers == index }}">
+                          <!-- 显示正确答案图标 -->
+                          <label class="letterRight">
+                            <text class="iconRight"></text>{{indexArray[index]}} </label>
+                          <radio value="{{index+10}}" disabled="ture" />{{item}}
+                        </block>
+                        <block wx:elif="{{question.currentAnswers == index }}">
+                          <!-- 显示错误的图片答案图标 -->
+                          <label class="letterWrong">
+                            <text class="iconRight"></text>{{indexArray[index]}} </label>
+                          <radio value="{{index+10}}" disabled="ture" />{{item}}
+                        </block>
+                        <block wx:else>
+                          <!-- 显示正常答案图标 -->
+                          <label class="letter">
+                            <text class="iconRight"></text>{{indexArray[index]}} </label>
+                          <radio value="{{index+10}}" disabled="ture" />{{item}}
+                        </block>
+                      </block>
+                    </block>
+
+                    <block wx:else>
+                      <!-- 没有选择时 -->
+
+                      <label class="letter">
+                        <text class="iconRight"></text>{{indexArray[index]}}</label>
+
+                      <radio value="{{index+10}}" />{{item}}
+
+                    </block>
+
+                  </label>
+                </label>
+
+
+              </radio-group>
+
+
+
+            </form>
+            <!-- 解析 -->
+            <block wx:if="{{isAnalyze}}">
+              <view class="jiexiBaba" style="display:block">
+                <view class="answerWrapper">
+                  <view class="jxi">
+                    <text>答案详解</text>
+                  </view>
+                  <view class="daan">答案：正确答案
+                    <text class="my-answer">{{questionC.answer}}</text>，你的答案
+                    <text class="correct-answer">{{indexArray[question.currentAnswers]}}</text>
+                  </view>
+                  <view class="degree">难度：
+                    <view class="star">
+                      <block wx:if="{{questionC.level == 2}}">
+                        <image src="../../images/starN.png"></image>
+                        <image src="../../images/starN.png"></image>
+                        <image src="../../images/starN.png"></image>
+                        <image src="../../images/starR.png"></image>
+                        <image src="../../images/starR.png"></image>
+                      </block>
+                      <block wx:elif="{{questionC.level == 3}}">
+                        <image src="../../images/starN.png"></image>
+                        <image src="../../images/starN.png"></image>
+                        <image src="../../images/starN.png"></image>
+                        <image src="../../images/starN.png"></image>
+                        <image src="../../images/starN.png"></image>
+                      </block>
+                      <block wx:else>
+                        <image src="../../images/starN.png"></image>
+                        <image src="../../images/starR.png"></image>
+                        <image src="../../images/starR.png"></image>
+                        <image src="../../images/starR.png"></image>
+                        <image src="../../images/starR.png"></image>
+                      </block>
+
+
+                    </view>
+                  </view>
+                  <view class="count">统计：共965人答过，错误率40%</view>
+                </view>
+                <view class="answerWrapper par">
+                  <view class="jiexiWrapper">
+                    <view>解析:</view>
+                    <navigator class="jiexiWrapper jiexiPar" url="../errorback/errorback">纠错
+                      <view class="rightArrow"></view>
+                    </navigator>
+                  </view>
+                  <view>3333</view>
+                </view>
+                <view class="answerWrapper par">
+                  <view class="jiexiWrapper">
+                    <view>笔记：</view>
+                    <view class="jiexiWrapper jiexiPar" bindtap="modalinput">编辑
+                      <view class="rightArrow"></view>
+                    </view>
+                  </view>
+                  <view>{{question.remark}}</view>
+
+                </view>
+              </view>
+            </block>
+          </block>
+
+
+
+          <!-- A3/A4 -->
+          <block wx:elif="{{question.type == 3}}">
+            <form bindsubmit="submitAnswer">
+              <view class="questionWrapper queB1Wrapper">
+                {{question.stem}}
+              </view>
+
+              <view class="questionWrapper">
+                {{question.question}}
+              </view>
+
+              <radio-group class="questionChoice" bindchange="radioChange">
+                <label class="questionCon">
+                  <radio value="A"></radio>
+                  <text class="letter"><text class="iconRight"></text>A</text>
+                  <view>{{question.choices[0]}}</view>
+                </label>
+              </radio-group>
+              <radio-group class="questionChoice" bindchange="radioChange">
+                <label class="questionCon">
+                  <radio value="B"></radio>
+                  <text class="letter"><text class="iconRight"></text>B</text>
+                  <view>{{question.choices[1]}}</view>
+                </label>
+              </radio-group>
+              <radio-group class="questionChoice" bindchange="radioChange">
+                <label class="questionCon">
+                  <radio value="C"></radio>
+                  <text class="letter"><text class="iconRight"></text>C</text>
+                  <view>{{question.choices[2]}}</view>
+                </label>
+              </radio-group>
+              <radio-group class="questionChoice" bindchange="radioChange">
+                <label class="questionCon">
+                  <radio value="D"></radio>
+                  <text class="letter"><text class="iconRight"></text>D</text>
+                  <view>{{question.choices[3]}}</view>
+                </label>
+              </radio-group>
+              <radio-group class="questionChoice" bindchange="radioChange">
+                <label class="questionCon">
+                  <radio value="E"></radio>
+                  <text class="letter"><text class="iconRight"></text>E</text>
+                  <view>{{question.choices[4]}}</view>
+                </label>
+              </radio-group>
+            </form>
+            <!-- 解析 -->
+            <view class="jiexiBaba">
+              <view class="answerWrapper">
+                <view class="jxi">
+                  <text>答案详解</text>
+                </view>
+                <view class="daan">答案：正确答案
+                  <text class="my-answer">A</text>，你的答案
+                  <text class="correct-answer">C</text>
+                </view>
+                <view class="degree">难度：
+                  <view class="star">
+                    <image src="../../images/starN.png"></image>
+                    <image src="../../images/starR.png"></image>
+                    <image src="../../images/starR.png"></image>
+                    <image src="../../images/starR.png"></image>
+                    <image src="../../images/starR.png"></image>
+                  </view>
+                </view>
+                <view class="count">统计：共965人答过，错误率40%</view>
+              </view>
+              <view class="answerWrapper par">
+                <view class="jiexiWrapper">
+                  <view>解析:</view>
+                  <navigator class="jiexiWrapper jiexiPar" url="../errorback/errorback">纠错
+                    <view class="rightArrow"></view>
+                  </navigator>
+                </view>
+                <view>ekekekk</view>
+              </view>
+              <view class="answerWrapper par">
+                <view class="jiexiWrapper">
+                  <view>笔记：</view>
+                  <view class="jiexiWrapper jiexiPar" bindtap="modalinput">编辑
+                    <view class="rightArrow"></view>
+                  </view>
+                </view>
+                <view>ekekekk</view>
+
+              </view>
+            </view>
+          </block>
+
+
+
+
+
+          <!-- B1 -->
+          <block wx:elif="{{question.type == 4}}">
+            <form bindsubmit="submitAnswer" class="b1submit">
+              <view class="questionWrapper queB1Wrapper">
+                {{question.question}}
+
+
+                <view wx:for="{{question.choices}}" wx:for-item="choice" wx:for-index="index">{{indexArray[index]}} {{choice}}</view>
+
+              </view>
+
+              <block>
+                <view class="b1tit">1.最早萌出的恒牙是</view>
+                <view class="b1submitPar">
+                  <radio-group class="questionChoice" bindchange="radioChange">
+                    <label class="questionCon">
+                      <radio value="A"></radio>
+                      <text class="letter"><text class="iconRight"></text>A</text>
+                    </label>
+                  </radio-group>
+                  <radio-group class="questionChoice" bindchange="radioChange">
+                    <label class="questionCon">
+                      <radio value="B"></radio>
+                      <text class="letter"><text class="iconRight"></text>B</text>
+                    </label>
+                  </radio-group>
+                  <radio-group class="questionChoice" bindchange="radioChange">
+                    <label class="questionCon">
+                      <radio value="C"></radio>
+                      <text class="letter"><text class="iconRight"></text>C</text>
+                    </label>
+                  </radio-group>
+                  <radio-group class="questionChoice" bindchange="radioChange">
+                    <label class="questionCon">
+                      <radio value="D"></radio>
+                      <text class="letter"><text class="iconRight"></text>D</text>
+                    </label>
+                  </radio-group>
+                  <radio-group class="questionChoice" bindchange="radioChange">
+                    <label class="questionCon">
+                      <radio value="E"></radio>
+                      <text class="letter"><text class="iconRight"></text>E</text>
+                    </label>
+                  </radio-group>
+                </view>
+              </block>
+            </form>
+            <!-- 解析 -->
+            <view class="jiexiBaba">
+              <view class="answerWrapper">
+                <view class="jxi">
+                  <text>答案详解</text>
+                </view>
+                <view class="daan">答案：正确答案
+                  <text class="my-answer">A</text>，你的答案
+                  <text class="correct-answer">C</text>
+                </view>
+                <view class="degree">难度：
+                  <view class="star">
+                    <image src="../../images/starN.png"></image>
+                    <image src="../../images/starR.png"></image>
+                    <image src="../../images/starR.png"></image>
+                    <image src="../../images/starR.png"></image>
+                    <image src="../../images/starR.png"></image>
+                  </view>
+                </view>
+                <view class="count">统计：共965人答过，错误率40%</view>
+              </view>
+              <view class="answerWrapper par">
+                <view class="jiexiWrapper">
+                  <view>解析:</view>
+                  <navigator class="jiexiWrapper jiexiPar" url="../errorback/errorback">纠错
+                    <view class="rightArrow"></view>
+                  </navigator>
+                </view>
+                <view>ekekekk</view>
+              </view>
+              <view class="answerWrapper par">
+                <view class="jiexiWrapper">
+                  <view>笔记：</view>
+                  <view class="jiexiWrapper jiexiPar" bindtap="modalinput">编辑
+                    <view class="rightArrow"></view>
+                  </view>
+                </view>
+                <view>ekekekk</view>
+
+              </view>
+            </view>
+          </block>
+
+
+
+
+
+        </scroll-view>
+      </view>
+    </swiper-item>
+  </swiper>
+</view>
+
+
+
+<template is="msgBottomBar" data="{{...item,mySelect:selectIndexs}}" />

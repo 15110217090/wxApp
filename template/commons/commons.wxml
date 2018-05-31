@@ -1,0 +1,39 @@
+<!-- 题型header -->
+<template name="msgHeader">
+  <view class="header">
+      <view class="title">【{{title}}题型】</view>
+      <view class="num">{{index}}/{{count}}</view>
+  </view>
+</template>
+
+<!-- 题型bottom -->
+<template name="msgBottomBar">
+  <view class="bottomBar">
+    <view class="item" bindtap="collectTap">
+      <view class="content">
+        <image wx:if="{{states}}" class="sc" src="../../images/xxA.png"></image>
+        <image wx:else class="sc" src="../../images/xx.png"></image>
+        <text>收藏</text>
+      </view>
+    </view>    
+
+    <view class="item" bindtap="lookCard">
+      <view class="content">
+        <image class="sc" src="../../images/dtk.png"></image>
+        <text>答题卡</text>
+      </view>
+    </view>
+
+    <view class="item" bindtap="lookResult">
+      <view wx:if="{{time}}"  class="content">
+        <image class="sc" src="https://tk.qikeya.com/static/images/wxmini/time.png"></image>
+        <text>{{time}}</text>
+      </view> 
+
+      <view  wx:else  class="content">
+        <image class="sc" src="../../images/yj.png"></image>
+        <text>看答案</text>
+      </view> 
+    </view>
+  </view> 
+</template>

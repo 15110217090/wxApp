@@ -1,0 +1,225 @@
+.header{
+  height:113rpx;
+  padding:0 50rpx;
+  font-size:30rpx;
+  display: flex;
+  justify-content:space-between;
+  align-items:center;
+  text-align: center;
+   border-bottom:10rpx #fffbfb solid; 
+}
+.content{
+    font-size:30rpx;
+}
+.questionWrapper{
+  padding:30rpx 30rpx;
+  line-height: 50rpx;
+}
+swiper{
+  display: block;
+  min-height:850rpx; 
+}
+.questionCon{
+  display: flex;
+  align-items:center;
+  padding:0 50rpx;
+  margin-bottom: 15rpx;
+}
+.bottomBar{
+  position: fixed;
+  width:100%;
+  z-index: 10;
+  bottom:0;
+  padding:10rpx 0 10rpx;
+  display: flex;
+  justify-content:space-between;
+  align-items:center;
+  text-align: center;
+  border-top:1px #f0f0f0 solid;
+}
+.bottomBar .item{
+  flex:1;
+}
+.bottomBar .item:last-child{
+  flex:3;
+}
+.sc{
+  width: 43rpx;
+  height:43rpx;
+}
+.bottomBar .content{
+   display: flex;
+   flex: 1;
+   align-items:center;
+   flex-direction:column;
+   text-align: center;
+   font-size: 24rpx;
+}
+.bottomBar .content text{
+  margin-top:10rpx;
+}
+.cardTit{
+  color:#343434;
+}
+.numAll{
+  color:#41a6fe;
+}
+.numNot{
+  color:#fd615a;
+}
+.btnSend{
+  width:95%;
+  color:#fff;
+  background: #41a6fe;
+}
+.cardlef{
+  width: 80rpx;
+  height:80rpx;
+  line-height: 80rpx;
+  border-radius: 50%;
+  border: 1px #818181 solid;
+  color:#404040;
+  text-align: center;
+  font-size:32rpx;
+  margin:15rpx;
+}
+.cardCon{
+  display: flex;
+  flex-wrap:wrap;
+}
+.active{
+  background: #41a6fe;
+  color:#fff;
+  border:none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.modal-mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.5;
+  overflow: hidden;
+  z-index: 9000;
+  color: #fff;
+}
+.modal-dialog {
+  width: 640rpx;
+  overflow: hidden;
+  position: fixed;
+  top:30%;
+  left: 0;
+  z-index: 9999;
+  background: #f9f9f9;
+  margin: -180rpx 55rpx;
+  border-radius: 10rpx;
+}
+.modal-title {
+  font-size: 36rpx;
+  color: #fff;
+  text-align: center;
+  line-height: 90rpx;
+  border-bottom: 1px #1176cb solid;
+  background: #40a8fe;
+  position: relative;
+}
+.close{
+  position: absolute;
+  right:28rpx;
+  top:18rpx;
+  border:1px #fff solid;
+  border-radius: 50%;
+  width:50rpx;
+  height:50rpx;
+  text-align: center;
+  line-height: 50rpx;
+}
+.modal-content{
+  background: #40a8fe;
+  padding:30rpx 25rpx 0;
+}
+.defen{
+  font-size: 32rpx;
+  color:#fff;
+}
+.score{
+  display: flex;
+  justify-content: center;
+  align-items:flex-end;
+  color:#fff;
+}
+.score view{
+  font-size: 150rpx;
+  font-weight: bold;
+}
+.depict{
+  display: flex;
+  font-size: 30rpx;
+  color:#fff;
+  padding-bottom: 30rpx;
+}
+.depict view{
+  width:33%;
+  padding:20rpx 0rpx  0 0rpx;
+  text-align: center;
+}
+.modal-dialog .item{
+  padding:40rpx 40rpx;
+  background: #fff;
+}
+.redTxt{
+  color:#f74941;
+  font-size: 32rpx;
+}
+.tishi{
+  font-size: 28rpx;
+  margin-top:40rpx;
+}
+.btnJxi{
+  display: flex; 
+  color:#fff;
+  margin-top:60rpx;
+}
+.btnJxi view{
+  width:50%;
+  font-size: 43rpx;
+  background: #40a8fe;
+  margin-right: 30rpx;
+  text-align: center;
+  line-height: 80rpx;
+  border-radius: 15rpx;
+}

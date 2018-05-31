@@ -1,0 +1,31 @@
+<!--chapterlist.wxml-->
+<view class="questiontypes">
+  <navigator url="../alltest/alltest?type=1">
+    <view class="item">
+        <view class="typeTitle">A1</view>
+        <view class="typeQes">型题</view>
+        <view class="typeBtn">开始答题</view>
+    </view>
+  </navigator>
+  <navigator url="../alltest/alltest?type=2">
+    <view class="item que2">
+        <view class="typeTitle">A2</view>
+        <view class="typeQes">型题</view>
+        <view class="typeBtn">开始答题</view>
+    </view>
+  </navigator>
+  <navigator url="../alltest/alltest?type=3">
+    <view class="item que3">
+        <view class="typeTitle">A3/A4</view>
+        <view class="typeQes">型题</view>
+        <view class="typeBtn">开始答题</view>
+    </view>
+  </navigator>
+  <navigator url="../alltest/alltest?type=4">
+    <view class="item que4">
+        <view class="typeTitle">B1</view>
+        <view class="typeQes">型题</view>
+        <view class="typeBtn">开始答题</view>
+    </view>
+  </navigator> 
+</view>

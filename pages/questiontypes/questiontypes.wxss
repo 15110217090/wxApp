@@ -1,0 +1,52 @@
+/* chapterlist.wxss */
+.questiontypes{
+  display: flex;
+  flex-wrap:wrap;
+  padding:20rpx 10rpx 0 40rpx;
+  color:#f74941;  
+}
+.item{
+  width:324rpx;
+  height:392rpx;
+  margin: 10rpx;
+  display: flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  box-shadow: 0 0 20px rgba(229, 229, 229, 1);
+}
+.typeTitle{
+  font-size:100rpx; 
+}
+.typeQes{
+  font-size: 36rpx;
+  margin-bottom: 20rpx;
+}
+.typeBtn{
+  font-size: 30rpx;
+  background: #f74941;
+  color:#fff;
+  width:200rpx;
+  height:65rpx;
+  border-radius: 23rpx;
+  text-align: center;
+  line-height:65rpx;
+}
+.que2{
+  color: #32c6af;
+}
+.que2 .typeBtn{
+  background: #32c6af;
+}
+.que3{
+  color: #41a6fe;
+}
+.que3 .typeBtn{
+  background: #41a6fe;
+}
+.que4{
+  color: #ffa800;
+}
+.que4 .typeBtn{
+  background: #ffa800;
+}
